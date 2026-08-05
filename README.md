@@ -24,7 +24,7 @@ _____':::::_____________________________________\__\______________________
 <h1 align="center">Unicorn Skills</h1>
 
 <p align="center">
-  <em>A lean Claude Code template for design teams: <strong>28 dense skills</strong>, <strong>8 commands</strong>, <strong>5 agents</strong> — and a built-in allergy to AI slop.</em>
+  <em>A lean Claude Code template for design teams: <strong>29 dense skills</strong>, <strong>10 commands</strong>, <strong>5 agents</strong> — and a built-in allergy to AI slop.</em>
 </p>
 
 ---
@@ -65,8 +65,8 @@ npm install -g chrome-devtools-mcp
 ```
 .claude/
   agents/        5 agents — Unicorn leads, 4 specialists support
-  skills/        28 skills (bundled, no plugins, no install)
-  commands/      8 slash commands
+  skills/        29 skills (bundled, no plugins, no install)
+  commands/      10 slash commands
 .mcp.json        Chrome DevTools + Figma
 CLAUDE.md        The system: no-slop policy, inventory, routing
 docs/OS.md       How we work — the team's co-working routines
@@ -78,19 +78,19 @@ taste/           The team's taste library — fed from Slack, read before design
 
 New to the team? Read [docs/OS.md](docs/OS.md) — one page: the session routine, daily/weekly rituals, and where everything lands.
 
-## The 28 skills
+## The 29 skills
 
 | Family | Skills |
 |---|---|
 | **Guardrails** | `no-slop` — the anti-AI-slop rules for visuals, copy, and code · `taste` — the team's taste memory, read before choosing any visual direction |
 | **Designer craft (8)** | `design-research` · `ux-strategy` · `design-systems` · `ui-design` · `interaction-design` · `prototyping-testing` · `design-ops` · `designer-toolkit` |
 | **Inclusive design (5)** | `inclusive-design` · `accessible-content` · `adaptive-interfaces` · `accessibility-process` · `motion-sensitivity` |
-| **Engineering quality (6)** | `emil-design-eng` · `frontend-design` · `vercel-web-design-guidelines` · `vercel-react-best-practices` · `vercel-react-native-skills` · `shadcn-ui` |
+| **Engineering quality (7)** | `dev-conventions` — git/commit discipline + stack picking · `emil-design-eng` · `frontend-design` · `vercel-web-design-guidelines` · `vercel-react-best-practices` · `vercel-react-native-skills` · `shadcn-ui` |
 | **Figma (7)** | `figma-use` (mandatory prereq) + generate-design, implement-design, generate-library, code-connect, design-system-rules, create-new-file |
 
 Each craft skill covers its whole discipline — `design-research` alone handles interviews, personas, journey maps, JTBD, usability tests, and synthesis.
 
-## The 8 commands
+## The 10 commands
 
 | Command | What it runs |
 |---|---|
@@ -98,7 +98,9 @@ Each craft skill covers its whole discipline — `design-research` alone handles
 | `/tokenize` | Stand up the design system: tokens, type, color, spacing + a11y checks |
 | `/design-screen` | One screen end-to-end: grid → hierarchy → states → inclusive pass → slop check |
 | `/handoff` | Dev handoff: spec, a11y notes, QA checklist, Figma code-connect |
+| `/commit` | Atomic commits the team's way: type + why + Jira, never main, never `git add -A`, never AI-signed |
 | `/slop-check` | The anti-slop review gate over any design, copy, or code |
+| `/taste-routine` | Pull + analyze + sync + push the taste library in one command |
 | `/taste-pull` | Pull new inspiration from Slack `#design-inspiration` into the taste library |
 | `/taste-add` | File inspiration from `taste/inbox/` into the taste library |
 | `/taste-sync` | Regenerate `taste/TASTE.md`, the team's synthesized taste profile |
@@ -125,6 +127,7 @@ Build with one, check with the other:
 | `emil-design-eng` (motion) | `motion-sensitivity` (vestibular safety — always) |
 | `design-research` (personas) | `accessibility-process` (disability-inclusive) |
 | `design-systems` (components) | `inclusive-design` (keyboard nav) |
+| `dev-conventions` (the commit + git envelope) | `no-slop` (the code inside the commit) |
 | anything shipped | `/slop-check` |
 
 ## Where did the other 86 skills go?
