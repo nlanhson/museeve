@@ -9,6 +9,7 @@ The operating manual for the team. One page; if a routine isn't here, it isn't a
 CLAUDE.md           System config Claude loads every session. Keep it lean.
 docs/
   OS.md             This manual.
+  conventions/      Developer conventions (git, commits, stack choice). Day-one read.
   plans/            Build plans for the system itself.
 project/            THE WORKSPACE — everything about the current client project.
   STATE.md          Shared memory between sessions and teammates. Unicorn owns it.
@@ -30,7 +31,7 @@ Two kinds of repo:
 1. **Open Claude Code and say hi to Unicorn** (or just state your task). Unicorn reads `project/STATE.md` and tells you where the project stands and what's next.
 2. Pick **instructor** (explains everything) or **operator** (just runs) when asked. Newcomers: instructor.
 3. Work. Artifacts land in the `project/` folders automatically — commands know their output paths.
-4. **Before you stop:** tell Claude "update STATE.md" if it hasn't already, and commit: `git add -A && git commit -m "what changed"`. STATE.md + git is how the next person (or tomorrow's you) resumes without re-explaining anything.
+4. **Before you stop:** tell Claude "update STATE.md" if it hasn't already, and commit with `/commit` — it stages the paths you've read (never `git add -A`), splits the work into atomic commits, and writes each message as `type(scope): what` + why + `Jira: KEY-123`. STATE.md + git is how the next person (or tomorrow's you) resumes without re-explaining anything. Full rules: `docs/conventions/common.md`.
 
 ## Daily
 
@@ -69,6 +70,7 @@ Trusted tools and sites live in `docs/resources.md` with a "use when" for each. 
 - **Client brand beats taste; taste beats defaults.** The taste profile breaks ties — it never overrides a client's brand.
 - **Tokens over raw values**, WCAG AA minimum, keyboard + reduced-motion from the start. Non-negotiable.
 - **STATE.md is append-only for decisions.** Never rewrite history; the next designer needs it.
+- **Git is a deliverable.** Never push to `main`, never `git add -A`, always link the Jira ticket, never let AI sign the commit. Atomic commits, `type(scope)` + why + Jira. Full rules: `docs/conventions/common.md`.
 
 ## Working with models and limits
 

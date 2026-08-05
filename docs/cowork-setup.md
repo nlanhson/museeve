@@ -22,7 +22,9 @@ and docs/OS.md and follow them. Standing rules:
 - Consult taste/TASTE.md before proposing any visual direction.
 - Project artifacts have fixed homes under project/ (research, design-system,
   screens, reviews, handoff). Update project/STATE.md at each stage.
-- Commit and push meaningful changes; keep commit messages plain.
+- Follow the developer conventions (docs/conventions/common.md): never push to
+  main, never git add -A, always link the Jira ticket, never let AI sign the
+  commit. Atomic commits, type(scope) + why + Jira. Use /commit.
 ```
 
 ## 2. Scheduled — the taste routine

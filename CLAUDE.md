@@ -9,7 +9,15 @@ The `no-slop` skill is a standing constraint, not an on-demand tool:
 - **Reviewing** any design or code → `/slop-check` (or the `no-slop` checklist) is part of the review, alongside heuristics and accessibility.
 - Generic AI-default output (interchangeable layouts, hype copy, boilerplate code) is treated as a defect, same severity as a broken state.
 
-## Skills (28 active)
+## Developer conventions (always on)
+
+The client receives the whole repo and its history; the commit log is a deliverable. The `dev-conventions` skill is a standing constraint whenever code touches git:
+- **Committing / branching / pushing** → apply `dev-conventions`; run `/commit` to do it end to end.
+- **Four hard rules, no exceptions:** never push to `main` · always end a commit with `Jira: KEY-123` · never `git add -A` (stage read paths only) · never let AI sign the commit (no `Co-Authored-By: Claude`).
+- **Atomic commits:** one reversible change each, `type(scope): what` + why + Jira. Bundled/unrelated changes are a defect, same as a broken state.
+- **Stack choice:** "does a stranger need to find this on Google?" → Next.js (public) vs plain React/Vite (behind login) vs RN+Expo (mobile). Ask the tech lead, record it in `project/STATE.md`.
+
+## Skills (29 active)
 
 ### Core guardrails
 - **no-slop** — anti-AI-slop rules for visuals, copy, and code; includes the pre-ship slop check
@@ -32,7 +40,8 @@ The `no-slop` skill is a standing constraint, not an on-demand tool:
 - **accessibility-process** — inclusive personas/stories, WCAG mapping, tradeoffs, a11y handoff
 - **motion-sensitivity** — vestibular safety, prefers-reduced-motion, photosensitivity
 
-### Engineering quality (6) — snapshotted, travel with the repo
+### Engineering quality (7) — snapshotted, travel with the repo
+- **dev-conventions** — git/commit discipline: atomic commits, `type(scope)` + why + Jira, four hard rules, and the stack-picking test; pairs with `no-slop` (git envelope vs code payload)
 - **emil-design-eng** — animation & polish taste; when *not* to animate; Before/After/Why review format
 - **frontend-design** — distinctive production UI, anti-generic by design (Anthropic official)
 - **vercel-web-design-guidelines** — terse `file:line` UI code review (a11y, forms, hydration…)
@@ -43,8 +52,8 @@ The `no-slop` skill is a standing constraint, not an on-demand tool:
 ### Figma (7)
 `figma-use` (**mandatory prereq** before any `use_figma` call), figma-generate-design-new, figma-implement-design-new, figma-generate-library-new, figma-code-connect, figma-create-design-system-rules-new, figma-create-new-file
 
-## Commands (9)
-`/discover` (research cycle) · `/tokenize` (design system) · `/design-screen` (one screen end-to-end) · `/handoff` (dev handoff) · `/slop-check` (anti-slop review gate) · `/taste-routine` (pull+analyze+sync+push in one) · `/taste-pull` (fetch inspiration from Slack) · `/taste-add` (file inspiration from taste/inbox/) · `/taste-sync` (regenerate the taste profile)
+## Commands (10)
+`/discover` (research cycle) · `/tokenize` (design system) · `/design-screen` (one screen end-to-end) · `/handoff` (dev handoff) · `/commit` (atomic commits the team's way) · `/slop-check` (anti-slop review gate) · `/taste-routine` (pull+analyze+sync+push in one) · `/taste-pull` (fetch inspiration from Slack) · `/taste-add` (file inspiration from taste/inbox/) · `/taste-sync` (regenerate the taste profile)
 
 ## Agents (5 — auto-activate)
 Talk naturally; Claude routes. **New designers: say hello to Unicorn.**
@@ -61,6 +70,7 @@ Talk naturally; Claude routes. **New designers: say hello to Unicorn.**
 - New screens / bold direction → `frontend-design` + `no-slop`
 - UI code review → `vercel-web-design-guidelines` + `no-slop`
 - React perf → `vercel-react-best-practices`; RN/Expo → `vercel-react-native-skills`
+- Committing / branching / pushing → `dev-conventions` + `/commit`; choosing a framework → the `dev-conventions` stack test, then record in `STATE.md`
 - Build then check: color system → color independence · personas → disability-inclusive dimensions · components → keyboard nav · type scale → flexible typography
 
 ## Workspace (team routines: `docs/OS.md`)
