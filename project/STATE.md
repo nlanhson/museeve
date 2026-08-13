@@ -11,7 +11,9 @@
 - **2026-08-10 — Design source of truth: Figma.** No WBS/PRD yet; the Figma file is the intake input. Screens, flows, and tokens get read from Figma via the Figma MCP (`figma-use` skill is the mandatory prereq before any `use_figma` call). WBS to follow from the client.
 - **2026-08-10 — Jira: read-only, project key `DUME`.** Board: https://digital-unicorn-group.atlassian.net/jira/software/c/projects/DUME/boards/1927/backlog — consulted for scope and ticket keys only. Never transition, edit, or comment on issues. Commit trailers carry `Jira: DUME-123`.
 - **2026-08-10 — Figma file:** `-ME- wireframe` — https://www.figma.com/design/8eSSaL6bKgsphXKKTXGUtx/-ME--wireframe (entry node `468-30959`)
-- **2026-08-10 — Repo: cloned from the `unicorn-skills` template** into the workspace root. Origin still points at the template; not repointed or re-inited yet, and nothing pushed.
+- **2026-08-10 — Repo: cloned from the `unicorn-skills` template** into the workspace root.
+- **2026-08-13 — Repo moved to https://github.com/nlanhson/museeve** (public). Origin repointed off the template; all work pushed as 8 atomic commits seeding `main`, with `feat/expo-scaffold` pushed alongside it. `main` is now live — from here the never-push-to-main rule applies as normal.
+- **2026-08-13 — `Jira:` trailers dropped for the initial push** on the user's call: no real `DUME` ticket numbers exist for the scaffold work, and the alternative was inventing keys. Later commits should carry real trailers once tickets exist.
 
 - **2026-08-10 — WBS received** → `project/brief/Music Everywhere FollowUp_WBS_estimated.xlsx`. 294 user stories, 27 epics; 219 In Scope / 75 Out of Scope (out-of-scope rows estimated at 142.5 days / €73,102, tagged V1/V2/V3). `Main Design` covers ~28 of the 219 in-scope stories (Authentication & Core, Profile creation, Home stub); the other ~190 have no validated design yet. Build proceeds on `Main Design`; the wider WBS awaits design.
 - **2026-08-10 — Build base: the `Museeve` repo Expo scaffold.** A separate `museeve-app` monorepo (company production core) existed briefly as an alternative base but was removed by the user; all UI primitives get built from scratch against `figma-screen-inventory.md`.
@@ -48,7 +50,7 @@
 
 ## Next step
 
-Commit the work — blocked only on real `DUME` ticket numbers (none exist in the WBS; the trailer rule needs them). Then simulator screenshots against the Figma nodes, `/slop-check`, and the design-gap answers in `figma-screen-inventory.md`.
+Work is committed and pushed. Next: simulator screenshots against the Figma nodes, `/slop-check`, and the design-gap answers in `figma-screen-inventory.md`.
 
 **Open questions**
 - Which feature areas are in v1 — `Main Design` only, or also Social / Community / Monetization / Rental / Partner finder?
