@@ -14,6 +14,9 @@
 - **2026-08-10 — Repo: cloned from the `unicorn-skills` template** into the workspace root.
 - **2026-08-13 — Repo moved to https://github.com/nlanhson/museeve** (public). Origin repointed off the template; all work pushed as 8 atomic commits seeding `main`, with `feat/expo-scaffold` pushed alongside it. `main` is now live — from here the never-push-to-main rule applies as normal.
 - **2026-08-13 — `Jira:` trailers dropped for the initial push** on the user's call: no real `DUME` ticket numbers exist for the scaffold work, and the alternative was inventing keys. Later commits should carry real trailers once tickets exist.
+- **2026-08-13 — Concepts site published** → https://nlanhson.github.io/museeve/ via GitHub Pages, served from an orphan `gh-pages` branch holding only `index.html` (a deploy copy of the concepts page) and `.nojekyll`. Reviewers get the site, not the repo. Re-sync steps are in `CLAUDE.md`.
+- **2026-08-13 — Repo stripped to design-only.** The Expo scaffold (`src/`, `assets/`, all app config, `.vscode/`) and the unicorn-skills template content (`docs/`, `taste/`, template `README.md`) were removed; `.claude/` was kept so skills and agents still work here. UI v1 remains reachable in history at `b867724` — this is a working-tree removal, not a history rewrite, so nothing was erased. `CLAUDE.md` rewritten for the new shape.
+- **2026-08-13 — Known gap from that strip:** the `taste` skill and `/taste-*` commands are still in `.claude/` but the `taste/` library they read is gone from this repo; they will not work here. Team taste memory lives in `unicorn-skills`.
 
 - **2026-08-10 — WBS received** → `project/brief/Music Everywhere FollowUp_WBS_estimated.xlsx`. 294 user stories, 27 epics; 219 In Scope / 75 Out of Scope (out-of-scope rows estimated at 142.5 days / €73,102, tagged V1/V2/V3). `Main Design` covers ~28 of the 219 in-scope stories (Authentication & Core, Profile creation, Home stub); the other ~190 have no validated design yet. Build proceeds on `Main Design`; the wider WBS awaits design.
 - **2026-08-10 — Build base: the `Museeve` repo Expo scaffold.** A separate `museeve-app` monorepo (company production core) existed briefly as an alternative base but was removed by the user; all UI primitives get built from scratch against `figma-screen-inventory.md`.
@@ -50,7 +53,9 @@
 
 ## Next step
 
-Work is committed and pushed. Next: simulator screenshots against the Figma nodes, `/slop-check`, and the design-gap answers in `figma-screen-inventory.md`.
+Concepts site is live at https://nlanhson.github.io/museeve/ and shared for client reaction. Next: their answers on the nine group recommendations, then `/tokenize` (the concepts need a serif-italic 24/32 title style not yet in the ramp), and the design-gap answers in `figma-screen-inventory.md`.
+
+The simulator-screenshot step is dropped — the Expo build is no longer in this repo.
 
 **Open questions**
 - Which feature areas are in v1 — `Main Design` only, or also Social / Community / Monetization / Rental / Partner finder?
